@@ -52,10 +52,12 @@
   "web_accessible_resources": [
     {
       "resources": [
-        "moderation-panel.html",
+        "index.html",
+        "popup.html",
         "static/css/*.css",
         "static/js/*.js",
-        "static/media/*"
+        "static/media/*",
+        "icons/*.png"
       ],
       "matches": ["*://kick.com/*"]
     }

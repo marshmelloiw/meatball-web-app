@@ -4,6 +4,7 @@ import { PointsProvider } from './contexts/PointsContext';
 import { ModerationProvider } from './contexts/ModerationContext';
 import ModerationPanel from './components/ModerationPanel';
 import ExtensionPopup from './components/ExtensionPopup';
+import './types/chrome.d.ts';
 import './App.css';
 
 function App() {
@@ -17,7 +18,7 @@ function App() {
     
     if (viewParam === 'panel') {
       setView('panel');
-    } else if (window.location.pathname.includes('popup.html') || window.chrome?.extension) {
+    } else if (window.location.pathname.includes('popup.html') || (typeof chrome !== 'undefined' && chrome.runtime)) {
       setIsExtension(true);
       setView('popup');
     }

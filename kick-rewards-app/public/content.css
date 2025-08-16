@@ -1,0 +1,84 @@
+/* Content styles for Köfte/Meatball extension */
+
+#meatball-moderation-panel {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif !important;
+  background: linear-gradient(135deg, #252036 0%, #1a1625 100%) !important;
+  border-left: 1px solid #3d3552 !important;
+  box-shadow: -5px 0 25px rgba(0, 0, 0, 0.3) !important;
+}
+
+#meatball-toggle-btn {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif !important;
+}
+
+#meatball-toggle-btn:hover {
+  transform: scale(1.05) !important;
+  box-shadow: 0 6px 25px rgba(138, 152, 219, 0.4) !important;
+}
+
+#meatball-toggle-btn:active {
+  transform: scale(0.95) !important;
+}
+
+/* Ensure the panel doesn't interfere with page content */
+#meatball-moderation-panel iframe {
+  pointer-events: auto !important;
+}
+
+/* Hide scrollbars if needed */
+#meatball-moderation-panel::-webkit-scrollbar {
+  display: none !important;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  #meatball-moderation-panel {
+    width: 300px !important;
+    right: -300px !important;
+  }
+  
+  #meatball-toggle-btn {
+    width: 44px !important;
+    height: 44px !important;
+    top: 15px !important;
+    right: 15px !important;
+  }
+}
+
+/* Animation keyframes */
+@keyframes meatball-slide-in {
+  from {
+    right: -350px;
+  }
+  to {
+    right: 0px;
+  }
+}
+
+@keyframes meatball-slide-out {
+  from {
+    right: 0px;
+  }
+  to {
+    right: -350px;
+  }
+}
+
+/* Notification badge for the toggle button */
+#meatball-toggle-btn::after {
+  content: '';
+  position: absolute;
+  top: -2px;
+  right: -2px;
+  width: 12px;
+  height: 12px;
+  background: #ff6b6b;
+  border-radius: 50%;
+  border: 2px solid #252036;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+#meatball-toggle-btn.has-notifications::after {
+  opacity: 1;
+}

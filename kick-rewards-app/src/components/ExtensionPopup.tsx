@@ -90,12 +90,15 @@ const ExtensionPopup: React.FC = () => {
 
   const openModerationPanel = () => {
     // Send message to content script to open moderation panel
-    if (window.chrome?.tabs) {
-      chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
-        if (tabs[0].id) {
+    if (typeof chrome !== 'undefined' && chrome.tabs) {
+      chrome.tabs.query({ active: true, currentWindow: true }, (tabs: chrome.tabs.Tab[]) => {
+        if (tabs[0]?.id) {
           chrome.tabs.sendMessage(tabs[0].id, { action: 'openModerationPanel' });
         }
       });
+    } else {
+      // Fallback for development - just show an alert
+      alert('Moderasyon paneli Kick.com'da çalışır. Extension olarak kurulduğunda aktif olacak.');
     }
   };
 
