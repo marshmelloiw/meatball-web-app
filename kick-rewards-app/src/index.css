@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+  
+  body {
+    @apply bg-kick-darker text-white;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-kick-primary text-kick-dark px-6 py-3 rounded-lg font-semibold hover:bg-kick-secondary transition-all duration-200 shadow-lg hover:shadow-kick-primary/20;
+  }
+  
+  .btn-secondary {
+    @apply bg-gray-700 text-white px-6 py-3 rounded-lg font-semibold hover:bg-gray-600 transition-all duration-200;
+  }
+  
+  .card {
+    @apply bg-kick-dark border border-gray-700 rounded-xl p-6 shadow-xl;
+  }
+  
+  .input-field {
+    @apply bg-kick-dark border border-gray-600 rounded-lg px-4 py-3 text-white placeholder-gray-400 focus:border-kick-primary focus:ring-1 focus:ring-kick-primary;
+  }
+  
+  .glow {
+    box-shadow: 0 0 20px rgba(83, 252, 24, 0.3);
+  }
+  
+  .points-glow {
+    text-shadow: 0 0 10px #ffd700, 0 0 20px #ffd700, 0 0 30px #ffd700;
+  }
+}
