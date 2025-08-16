@@ -1,38 +1,40 @@
-import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
 import { AuthProvider } from './contexts/AuthContext';
 import { PointsProvider } from './contexts/PointsContext';
-import Navbar from './components/Navbar';
-import Home from './pages/Home';
-import Login from './pages/Login';
-import Register from './pages/Register';
-import Points from './pages/Points';
-import Shop from './pages/Shop';
-import Profile from './pages/Profile';
-import Stream from './pages/Stream';
-import Dashboard from './pages/Dashboard';
+import { ModerationProvider } from './contexts/ModerationContext';
+import ModerationPanel from './components/ModerationPanel';
+import ExtensionPopup from './components/ExtensionPopup';
+import './App.css';
 
 function App() {
+  const [view, setView] = useState<'popup' | 'panel'>('popup');
+  const [isExtension, setIsExtension] = useState(false);
+
+  useEffect(() => {
+    // Check if running as extension popup or injected panel
+    const urlParams = new URLSearchParams(window.location.search);
+    const viewParam = urlParams.get('view');
+    
+    if (viewParam === 'panel') {
+      setView('panel');
+    } else if (window.location.pathname.includes('popup.html') || window.chrome?.extension) {
+      setIsExtension(true);
+      setView('popup');
+    }
+  }, []);
+
   return (
     <AuthProvider>
       <PointsProvider>
-        <Router>
-          <div className="min-h-screen bg-gradient-to-br from-kick-darker via-kick-dark to-kick-darker">
-            <Navbar />
-            <main className="pt-16">
-              <Routes>
-                <Route path="/" element={<Home />} />
-                <Route path="/login" element={<Login />} />
-                <Route path="/register" element={<Register />} />
-                <Route path="/points" element={<Points />} />
-                <Route path="/shop" element={<Shop />} />
-                <Route path="/profile" element={<Profile />} />
-                <Route path="/stream/:streamId" element={<Stream />} />
-                <Route path="/dashboard" element={<Dashboard />} />
-              </Routes>
-            </main>
+        <ModerationProvider>
+          <div className={`app ${isExtension ? 'extension-mode' : 'web-mode'}`}>
+            {view === 'popup' ? (
+              <ExtensionPopup />
+            ) : (
+              <ModerationPanel />
+            )}
           </div>
-        </Router>
+        </ModerationProvider>
       </PointsProvider>
     </AuthProvider>
   );

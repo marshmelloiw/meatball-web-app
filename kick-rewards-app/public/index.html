@@ -1,43 +1,123 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="tr">
   <head>
     <meta charset="utf-8" />
     <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
-    <meta
-      name="description"
-      content="Web site created using create-react-app"
-    />
+    <meta name="theme-color" content="#8A98DB" />
+    <meta name="description" content="Köfte/Meatball - Kick platformu için gelişmiş moderasyon paneli ve ödül sistemi" />
+    <meta name="keywords" content="Kick, moderation, streaming, rewards, Köfte, Meatball" />
+    <meta name="author" content="Meatball Team" />
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Köfte - Kick Moderasyon Paneli" />
+    <meta property="og:description" content="Kick yayıncıları ve moderatörleri için gelişmiş araçlar" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="%PUBLIC_URL%/og-image.png" />
+    
+    <!-- Twitter Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Köfte - Kick Moderasyon Paneli" />
+    <meta name="twitter:description" content="Kick yayıncıları ve moderatörleri için gelişmiş araçlar" />
+    
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
-    <!--
-      manifest.json provides metadata used when your web app is installed on a
-      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
-    -->
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <!--
-      Notice the use of %PUBLIC_URL% in the tags above.
-      It will be replaced with the URL of the `public` folder during the build.
-      Only files inside the `public` folder can be referenced from the HTML.
-
-      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
-      work correctly both with client-side routing and a non-root public URL.
-      Learn how to configure a non-root public URL by running `npm run build`.
-    -->
-    <title>React App</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <title>Köfte - Kick Moderasyon ve Ödül Sistemi</title>
+    
+    <style>
+      /* Loading screen */
+      .loading-screen {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(135deg, #1a1625 0%, #252036 100%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 9999;
+        transition: opacity 0.3s ease-out;
+      }
+      
+      .loading-logo {
+        width: 80px;
+        height: 80px;
+        background: linear-gradient(135deg, #8A98DB 0%, #A36FDB 100%);
+        border-radius: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 20px;
+        animation: pulse 2s infinite;
+      }
+      
+      .loading-text {
+        color: white;
+        font-family: 'Inter', sans-serif;
+        font-size: 24px;
+        font-weight: 700;
+        margin-top: 20px;
+        text-align: center;
+      }
+      
+      @keyframes pulse {
+        0%, 100% { transform: scale(1); }
+        50% { transform: scale(1.05); }
+      }
+      
+      .loading-spinner {
+        width: 40px;
+        height: 40px;
+        border: 4px solid #252036;
+        border-top: 4px solid #8A98DB;
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+        margin-top: 20px;
+      }
+      
+      @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+      }
+    </style>
   </head>
   <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <noscript>Bu uygulama JavaScript'i etkinleştirmenizi gerektiriyor.</noscript>
+    
+    <!-- Loading Screen -->
+    <div id="loading-screen" class="loading-screen">
+      <div style="text-align: center;">
+        <div class="loading-logo">
+          <span style="color: white; font-size: 32px; font-weight: bold;">K</span>
+        </div>
+        <div class="loading-text">Köfte</div>
+        <div style="color: #8A98DB; font-size: 14px; margin-top: 8px;">Moderasyon ve Ödül Sistemi</div>
+        <div class="loading-spinner"></div>
+      </div>
+    </div>
+    
     <div id="root"></div>
-    <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
-
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
-
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
+    
+    <script>
+      // Hide loading screen after app loads
+      window.addEventListener('load', function() {
+        setTimeout(function() {
+          const loadingScreen = document.getElementById('loading-screen');
+          if (loadingScreen) {
+            loadingScreen.style.opacity = '0';
+            setTimeout(function() {
+              loadingScreen.style.display = 'none';
+            }, 300);
+          }
+        }, 1000);
+      });
+    </script>
   </body>
 </html>

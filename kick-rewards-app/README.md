@@ -1,174 +1,189 @@
-# KickRewards - Kick Platform Ödül Sistemi
+# Köfte/Meatball - Kick Moderation & Rewards Extension
 
-Kick platformu için Blerp benzeri bir web uygulaması. İzleyiciler yayın izledikleri süre boyunca puan kazanır ve bu puanları özellikler satın almak için kullanabilirler.
+**Köfte** (Turkish) / **Meatball** (English) - Advanced moderation panel and reward system browser extension for Kick streamers and moderators.
 
-## 🌟 Özellikler
+## 🌟 Features
 
-### 🎯 Ana Özellikler
-- **Puan Sistemi**: Yayın izleyerek otomatik puan kazanma
-- **Mağaza**: Puanlarla özel özellikler ve ödüller satın alma
-- **Gerçek Zamanlı İzleme**: Canlı puan kazanma takibi
-- **Kullanıcı Profili**: Detaylı istatistikler ve başarımlar
-- **Dashboard**: Kapsamlı analitik ve aktivite takibi
+### 🛡️ Advanced Moderation Panel
+- **Twitch-like Interface**: Familiar and intuitive moderation tools
+- **Real-time Chat Management**: Delete, highlight, and moderate messages instantly
+- **User Management**: Ban, timeout, VIP, and mod users with one click
+- **Smart Filtering**: Filter messages by mods, VIPs, deleted messages, and more
+- **Live Statistics**: Real-time chat and user analytics
+- **Quick Actions**: Emergency stop, slow mode, subscriber-only mode
 
-### 📱 Sayfa Yapısı
-- **Ana Sayfa**: Öne çıkan yayınlar ve platform tanıtımı
-- **Giriş/Kayıt**: Güvenli kullanıcı kimlik doğrulama
-- **Puanlarım**: Puan geçmişi ve başarımlar
-- **Mağaza**: Satın alınabilir özellikler ve ödüller
-- **Profil**: Hesap yönetimi ve ayarlar
-- **Yayın**: Canlı yayın izleme ve sohbet
-- **Dashboard**: Detaylı istatistikler ve analitik
+### 💎 Rewards System
+- **Point Earning**: Automatic points for watching streams
+- **Interactive Shop**: Purchase special features and rewards with points
+- **Achievement System**: Unlock badges and bonuses through activities
+- **Level Progression**: Advance through levels and unlock new features
+- **Multipliers**: Boost point earning with premium features
 
-### 🎨 Modern UI/UX
-- Kick platformu temalı koyu tasarım
-- Responsive tasarım (mobil uyumlu)
-- Smooth animasyonlar ve efektler
-- Türkçe dil desteği
-- Oyuncu odaklı tasarım öğeleri
+### 🎨 Modern Design
+- **Purple/Blue Theme**: Beautiful gradient design with modern colors
+- **Responsive**: Works perfectly on all screen sizes
+- **Smooth Animations**: Polished user experience with smooth transitions
+- **Dark Theme**: Easy on the eyes for long moderation sessions
+- **Turkish/English**: Full localization support
 
-## 🚀 Teknolojiler
+## 🚀 Installation
 
-- **Frontend**: React 18 + TypeScript
-- **Styling**: Tailwind CSS
-- **Routing**: React Router v6
-- **Icons**: Lucide React
-- **State Management**: React Context API
-- **Data Persistence**: LocalStorage
+### Chrome/Edge Extension
+1. Download the latest release from [Releases](https://github.com/meatball-team/meatball-extension/releases)
+2. Extract the ZIP file
+3. Open Chrome/Edge and go to `chrome://extensions/`
+4. Enable "Developer mode"
+5. Click "Load unpacked" and select the extracted folder
+6. The Köfte extension icon will appear in your toolbar
 
-## 📦 Kurulum
-
-### Ön Gereksinimler
-- Node.js (v16 veya üzeri)
-- npm veya yarn
-
-### Adımlar
-
-1. Proje klasörüne gidin:
+### Development Setup
 ```bash
-cd kick-rewards-app
-```
+# Clone the repository
+git clone https://github.com/meatball-team/meatball-extension.git
+cd meatball-extension
 
-2. Bağımlılıkları yükleyin:
-```bash
+# Install dependencies
 npm install
-```
 
-3. Uygulamayı başlatın:
-```bash
+# Start development server
 npm start
+
+# Build for production
+npm run build
 ```
 
-4. Tarayıcınızda açın: `http://localhost:3000`
+## 📱 Usage
 
-## 🎮 Kullanım
+### Extension Popup
+Click the Köfte extension icon to open the popup interface:
+- **Dashboard**: Overview of points, level, and quick actions
+- **Shop**: Browse and purchase features with points
+- **Profile**: View achievements and account settings
 
-### İlk Adımlar
-1. **Kayıt Olun**: Ücretsiz hesap oluşturun
-2. **Yayın İzleyin**: Herhangi bir canlı yayını açın
-3. **Puan Kazanın**: İzlediğiniz her 30 saniyede puan kazanın
-4. **Mağazaya Gidin**: Puanlarınızla özel özellikler satın alın
+### Moderation Panel
+1. Navigate to any Kick.com stream
+2. Click the shield icon in the extension popup
+3. The moderation panel will slide in from the right
+4. Manage chat, users, and view statistics
 
-### Puan Sistemi
-- **İzleme**: Dakika başına 2-5 puan
-- **Bonus**: %5 şansla rastgele bonus puanlar
-- **Çarpanlar**: Özel özelliklerle puan çarpanı artırın
-- **Başarımlar**: Hedefleri tamamlayarak ekstra puan kazanın
+### Point System
+- **Automatic Earning**: Points earned while watching streams
+- **Bonus Events**: Random bonus points during streaming
+- **Shop Purchases**: Spend points on VIP badges, multipliers, and more
+- **Achievements**: Complete goals to earn extra points
 
-### Mağaza Öğeleri
-- **VIP Rozet** (500 puan): Profilde özel rozet
-- **2x Puan Çarpanı** (750 puan): 1 hafta 2x puan
-- **Reklamsız Deneyim** (1000 puan): 1 ay reklamsız izleme
-- **Steam Kuponu** (2000 puan): 50₺ Steam kuponu
-- **PlayStation Store** (4000 puan): 100₺ PlayStation kuponu
+## 🛠️ Features Overview
 
-## 🏗️ Proje Yapısı
+### Moderation Panel Tabs
+- **🗨️ Chat**: Real-time message management with filtering
+- **👥 Users**: User list with moderation actions
+- **📊 Stats**: Live statistics and analytics
+- **⚙️ Settings**: Moderation preferences and quick actions
 
+### Shop Categories
+- **👑 Cosmetics**: VIP badges, special colors, custom emojis
+- **⚡ Boosts**: Point multipliers, bonus generators
+- **🔧 Features**: Advanced moderation tools, ad-free experience
+- **🎁 Rewards**: Steam gifts, PlayStation Store credits
+
+### User Roles & Badges
+- **🛡️ Moderator**: Full moderation privileges
+- **⭐ VIP**: Special privileges and badge
+- **👑 Subscriber**: Subscription badge and perks
+- **🤖 Bot**: Automated account indicator
+
+## 🎯 Technical Details
+
+### Built With
+- **React 18**: Modern React with hooks and TypeScript
+- **Tailwind CSS**: Utility-first CSS framework
+- **Chrome Extension API**: Manifest V3 compatibility
+- **Local Storage**: Persistent data storage
+- **Content Scripts**: Seamless integration with Kick.com
+
+### Project Structure
 ```
 src/
-├── components/          # Yeniden kullanılabilir bileşenler
-│   └── Navbar.tsx      # Navigasyon bileşeni
-├── contexts/           # React Context providers
-│   ├── AuthContext.tsx # Kimlik doğrulama yönetimi
-│   └── PointsContext.tsx # Puan sistemi yönetimi
-├── pages/              # Sayfa bileşenleri
-│   ├── Home.tsx        # Ana sayfa
-│   ├── Login.tsx       # Giriş sayfası
-│   ├── Register.tsx    # Kayıt sayfası
-│   ├── Points.tsx      # Puanlarım sayfası
-│   ├── Shop.tsx        # Mağaza sayfası
-│   ├── Profile.tsx     # Profil sayfası
-│   ├── Stream.tsx      # Yayın sayfası
-│   └── Dashboard.tsx   # Dashboard sayfası
-├── App.tsx             # Ana uygulama bileşeni
-├── index.tsx           # Uygulama giriş noktası
-└── index.css           # Global stiller ve Tailwind
+├── components/
+│   ├── ModerationPanel.tsx    # Main moderation interface
+│   └── ExtensionPopup.tsx     # Popup interface
+├── contexts/
+│   ├── AuthContext.tsx        # User authentication
+│   ├── PointsContext.tsx      # Points and rewards
+│   └── ModerationContext.tsx  # Moderation state
+└── App.tsx                    # Main application component
+
+public/
+├── manifest.json              # Extension manifest
+├── popup.html                 # Extension popup page
+└── icons/                     # Extension icons
 ```
 
-## 🎨 Tasarım Sistemi
+### Color Palette
+- **Primary**: `#8A98DB` - Soft purple-blue
+- **Secondary**: `#A36FDB` - Rich purple
+- **Tertiary**: `#63C3DB` - Light blue
+- **Accent**: `#4860D9` - Deep blue
+- **Dark**: `#5E48D9` - Dark purple
+- **Background**: `#1a1625` - Deep dark
+- **Surface**: `#252036` - Card background
 
-### Renkler
-- **Primary**: `#53fc18` (Kick yeşili)
-- **Secondary**: `#00ff41` (Neon yeşil)
-- **Dark**: `#0f0f23` (Koyu mavi)
-- **Darker**: `#0a0a1a` (Daha koyu)
-- **Accent**: `#ff6b6b` (Vurgu kırmızısı)
-- **Gold**: `#ffd700` (Puan altını)
+## 🔧 Configuration
 
-### Tipografi
-- **Gaming Font**: Orbitron (başlıklar için)
-- **Body Font**: Inter (genel metin için)
+### Extension Permissions
+- **activeTab**: Access current Kick.com tab
+- **storage**: Save user preferences and points
+- **scripting**: Inject moderation panel
+- **host_permissions**: Access Kick.com pages
 
-### Bileşenler
-- **Kartlar**: Yuvarlatılmış köşeler, gölgeler
-- **Butonlar**: Hover efektleri, geçişler
-- **Formlar**: Modern input tasarımı
-- **Navigasyon**: Sabit üst menü
+### Moderation Settings
+- **Auto Moderation**: Automatic spam detection
+- **Spam Protection**: Advanced filtering rules
+- **Sound Notifications**: Audio alerts for actions
+- **Quick Modes**: One-click chat restrictions
 
-## 🔧 Özelleştirme
+## 🤝 Contributing
 
-### Yeni Özellikler Ekleme
-1. `src/pages/` altında yeni sayfa oluşturun
-2. `App.tsx` içinde route ekleyin
-3. `Navbar.tsx` içinde navigasyon bağlantısı ekleyin
+We welcome contributions! Please see our [Contributing Guidelines](CONTRIBUTING.md).
 
-### Mağaza Öğesi Ekleme
-`Shop.tsx` içindeki `shopItems` dizisine yeni öğe ekleyin:
+### Development Guidelines
+1. Follow TypeScript best practices
+2. Use Tailwind CSS for styling
+3. Maintain Turkish/English localization
+4. Test on both Chrome and Edge
+5. Follow extension security guidelines
 
-```typescript
-{
-  id: 'unique-id',
-  name: 'Öğe Adı',
-  description: 'Öğe açıklaması',
-  price: 1000,
-  category: 'features',
-  icon: <Icon size={24} />,
-  featured: true
-}
-```
+### Reporting Issues
+- Use the [Issues](https://github.com/meatball-team/meatball-extension/issues) page
+- Include browser version and steps to reproduce
+- Provide screenshots for UI issues
 
-## 🐛 Bilinen Sorunlar
+## 📄 License
 
-- Mock data kullanılıyor (gerçek API entegrasyonu gerekli)
-- Offline mod desteklenmiyor
-- Mobil chat optimizasyonu geliştirilebilir
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## 🤝 Katkıda Bulunma
+## 🛡️ Privacy & Security
 
-1. Fork yapın
-2. Feature branch oluşturun (`git checkout -b feature/amazing-feature`)
-3. Commit yapın (`git commit -m 'Add amazing feature'`)
-4. Push yapın (`git push origin feature/amazing-feature`)
-5. Pull Request açın
+- **No Data Collection**: We don't collect personal data
+- **Local Storage**: All data stored locally on your device
+- **Secure Permissions**: Minimal required permissions only
+- **Open Source**: Full transparency of code
 
-## 📄 Lisans
+## 🌍 Localization
 
-Bu proje MIT lisansı altında lisanslanmıştır.
+- **🇹🇷 Turkish (Türkçe)**: Köfte - Native Turkish interface
+- **🇺🇸 English**: Meatball - Full English support
+- **More Languages**: Coming soon based on community demand
 
-## 📞 İletişim
+## 📞 Support
 
-Sorular veya geri bildirimler için issue açabilirsiniz.
+- **Discord**: [Join our community](https://discord.gg/meatball)
+- **Email**: support@meatball.app
+- **Documentation**: [Full docs](https://docs.meatball.app)
+- **Updates**: [Follow on Twitter](https://twitter.com/meatball_app)
 
 ---
 
-**Not**: Bu uygulama demo amaçlıdır ve gerçek Kick platformu ile bağlantılı değildir.
+**Note**: This extension is not affiliated with Kick.com. It's a community-built tool to enhance the streaming experience for moderators and viewers.
+
+**Made with ❤️ by the Meatball Team**

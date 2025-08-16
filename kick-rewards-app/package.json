@@ -1,7 +1,9 @@
 {
-  "name": "kick-rewards-app",
-  "version": "0.1.0",
+  "name": "meatball-extension",
+  "version": "1.0.0",
   "private": true,
+  "description": "Köfte/Meatball - Advanced moderation panel and reward system for Kick streamers",
+  "homepage": "https://github.com/meatball-team/meatball-extension",
   "dependencies": {
     "@tailwindcss/forms": "^0.5.10",
     "@testing-library/dom": "^10.4.1",

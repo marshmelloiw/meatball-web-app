@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -9,32 +9,136 @@
   }
   
   body {
-    @apply bg-kick-darker text-white;
+    @apply bg-meatball-background text-white;
+    font-feature-settings: 'cv11', 'ss01';
+    font-variant-ligatures: contextual;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  * {
+    box-sizing: border-box;
   }
 }
 
 @layer components {
   .btn-primary {
-    @apply bg-kick-primary text-kick-dark px-6 py-3 rounded-lg font-semibold hover:bg-kick-secondary transition-all duration-200 shadow-lg hover:shadow-kick-primary/20;
+    @apply bg-gradient-to-r from-meatball-primary to-meatball-secondary text-white px-6 py-3 rounded-lg font-semibold hover:shadow-meatball transition-all duration-200 border-0;
   }
   
   .btn-secondary {
-    @apply bg-gray-700 text-white px-6 py-3 rounded-lg font-semibold hover:bg-gray-600 transition-all duration-200;
+    @apply bg-meatball-surface text-white px-6 py-3 rounded-lg font-semibold hover:bg-meatball-border transition-all duration-200 border border-meatball-border;
+  }
+
+  .btn-danger {
+    @apply bg-red-600 hover:bg-red-700 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-200 border-0;
+  }
+
+  .btn-warning {
+    @apply bg-yellow-600 hover:bg-yellow-700 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-200 border-0;
   }
   
   .card {
-    @apply bg-kick-dark border border-gray-700 rounded-xl p-6 shadow-xl;
+    @apply bg-meatball-surface border border-meatball-border rounded-xl p-6 shadow-meatball backdrop-blur-sm;
+  }
+
+  .card-hover {
+    @apply card hover:shadow-meatball-lg hover:border-meatball-primary/30 transition-all duration-300;
   }
   
   .input-field {
-    @apply bg-kick-dark border border-gray-600 rounded-lg px-4 py-3 text-white placeholder-gray-400 focus:border-kick-primary focus:ring-1 focus:ring-kick-primary;
+    @apply bg-meatball-surface border border-meatball-border rounded-lg px-4 py-3 text-white placeholder-gray-400 focus:border-meatball-primary focus:ring-1 focus:ring-meatball-primary/50 transition-all duration-200;
   }
-  
-  .glow {
-    box-shadow: 0 0 20px rgba(83, 252, 24, 0.3);
+
+  .popup-container {
+    @apply w-80 h-96 bg-meatball-background border border-meatball-border rounded-lg shadow-meatball-lg;
+  }
+
+  .moderation-panel {
+    @apply bg-meatball-surface border-l border-meatball-border h-full overflow-hidden;
   }
   
   .points-glow {
-    text-shadow: 0 0 10px #ffd700, 0 0 20px #ffd700, 0 0 30px #ffd700;
+    text-shadow: 0 0 10px #8A98DB, 0 0 20px #8A98DB, 0 0 30px #8A98DB;
+  }
+
+  .gradient-text {
+    @apply bg-gradient-to-r from-meatball-primary via-meatball-secondary to-meatball-tertiary bg-clip-text text-transparent;
+  }
+
+  .badge {
+    @apply inline-flex items-center px-2 py-1 rounded-full text-xs font-medium;
+  }
+
+  .badge-mod {
+    @apply badge bg-meatball-accent text-white;
+  }
+
+  .badge-vip {
+    @apply badge bg-gradient-to-r from-yellow-500 to-orange-500 text-white;
+  }
+
+  .badge-subscriber {
+    @apply badge bg-meatball-primary text-white;
+  }
+
+  /* Scrollbar styling */
+  .custom-scrollbar {
+    scrollbar-width: thin;
+    scrollbar-color: #A36FDB #252036;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-track {
+    background: #252036;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background: #A36FDB;
+    border-radius: 3px;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: #8A98DB;
+  }
+
+  /* Extension specific styles */
+  .extension-popup {
+    @apply min-w-[400px] min-h-[500px] max-w-[400px] max-h-[600px];
+  }
+
+  .chat-message {
+    @apply p-2 hover:bg-meatball-background/50 transition-colors duration-150 border-l-2 border-transparent hover:border-meatball-primary/30;
+  }
+
+  .chat-message.highlighted {
+    @apply bg-meatball-accent/10 border-l-meatball-accent;
+  }
+
+  .chat-message.deleted {
+    @apply opacity-50 bg-red-900/20 border-l-red-500;
+  }
+
+  .mod-action-btn {
+    @apply p-1 rounded text-xs hover:bg-meatball-border transition-colors duration-150;
+  }
+
+  .status-indicator {
+    @apply w-2 h-2 rounded-full;
+  }
+
+  .status-online {
+    @apply status-indicator bg-green-500;
+  }
+
+  .status-busy {
+    @apply status-indicator bg-yellow-500;
+  }
+
+  .status-offline {
+    @apply status-indicator bg-gray-500;
   }
 }
