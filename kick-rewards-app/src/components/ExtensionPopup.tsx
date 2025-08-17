@@ -98,7 +98,7 @@ const ExtensionPopup: React.FC = () => {
       });
     } else {
       // Fallback for development - just show an alert
-      alert('Moderasyon paneli Kick.com'da çalışır. Extension olarak kurulduğunda aktif olacak.');
+      alert('Moderasyon paneli Kick.com\'da çalışır. Extension olarak kurulduğunda aktif olacak.');
     }
   };
 
